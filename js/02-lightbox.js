@@ -21,16 +21,16 @@ const gallery = document.querySelector('.gallery')
 
 
 
-gallery.addEventListener("click", openFullSize);
+// gallery.addEventListener("click", openFullSize);
 
-function openFullSize(evt) {
-    if (!evt.target.classList('.gallery__image')) {
-        return;
-    }
-    evt.preventDefault()
-}
+// function openFullSize(evt) {
+//     if (!evt.target.classList('.gallery__image')) {
+//         return;
+//     }
+//     evt.preventDefault()
+// }
 
-const galleryList = new SimpleLightbox('.gallery a')
+const galleryList = new SimpleLightbox('.gallery a', { captionDelay: 250 })
 
 
 

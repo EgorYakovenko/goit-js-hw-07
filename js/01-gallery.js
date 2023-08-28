@@ -32,16 +32,19 @@ const onClickImg = (event) => {
     <div class="modal">
     <img src ='${event.target.dataset.source}'>
     </div>
-` );
+`, {
+    onShow: () => document.addEventListener("keydown", onPressEsc),
+	onClose: () => document.removeEventListener("keydown", onPressEsc)
+} );
     const onPressEsc = (event) => {
     if (event.code === 'Escape') {
         instance.close();
-        window.removeEventListener("keydown", onPressEsc);    
+        // document.removeEventListener("keydown", onPressEsc);    
     }
 }
     
     instance.show()
-    window.addEventListener("keydown", onPressEsc);
+    // document.addEventListener("keydown", onPressEsc);
     
 }
 
